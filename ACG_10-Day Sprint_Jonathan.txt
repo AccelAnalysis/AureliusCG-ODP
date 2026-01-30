@@ -1,0 +1,365 @@
+Aurelius Capital Group – Quick Stand-Up Actions 
+Business / Real Estate (Screening discipline, deal standards, packaging)
+Table of Contents
+Overview	2
+1) Business / Logistics (Ops, systems, contracts, reporting)	2
+2) Business / Real Estate (Screening discipline, deal standards, packaging)	2
+3) Sales Management (Recruiting, coaching, cadence, performance)	3
+4) Communications (Collateral, messaging control, trust-building)	3
+10-Day Feasibility	3
+What’s realistic to finish in 10 days (MVP definition)	4
+Green (highly doable):	4
+Yellow (doable as MVP, but “final” depends on legal/tools):	4
+Red (not fully controllable in 10 days):	4
+Critical-path dependencies (what must happen first)	4
+Bottom-line feasibility call	4
+Your Mission, Should You Choose to Accept It	5
+Business / Real Estate (Screening discipline, deal standards, packaging)	5
+Role Mission (10-day MVP)	5
+MVP Deliverables (what this person must produce)	5
+A) Define what qualifies	5
+Lock the Owner/Asset eligibility criteria (asset types, size bands, income/occupancy expectations, authority/objective requirements)	5
+Build the red-flag list + “fast fail” rules aligned to screening stages	7
+B) Standardize what “partner-ready” means	8
+Define the minimum required data/doc standard before partner introduction	8
+Expected Outcome (Definition of Done)	9
+Create the Asset Brief template (2–3 pages) and the “Typical Deal Path” expectations one-pager	9
+Asset Brief Template (2–3 pages) — Build Instructions (MVP)	9
+Typical Deal Path One-Pager — Build Instructions (MVP)	10
+C) Calibrate quality	10
+Produce 3 example profiles: Strong / Borderline / Reject	10
+D) Set role boundaries	11
+Write the Originator-allowed vs ACG-only conversation boundary guide	11
+Originator Allowed (what they can gather)	11
+ACG-only (what originators must NOT do)	11
+Add “safe language” snippets	11
+Day 10 Acceptance Test for Role 2 (Biz/RE)	12
+
+
+Overview
+	•	This Overview second contains a list of what everyone is responsible for at a high level.
+	•	You’ll see a clean, short-term (next 10 days) task list by role.
+	•	10-Day Feasibility: In case you were wondering about the feasibility of completing your task in 10-days, read this.
+	•	If not, just skip to Your Mission, Should You Choose to Accept It. This contains:
+Mission → Deliverables → How to build → Definition of Done → What ‘finished MVP’ looks like
+
+1) Business / Logistics (Ops, systems, contracts, reporting)
+	•	Stand up the operating system
+	•	Finalize the end-to-end stage-gate SOP (stages, pass/fail rules, required outputs, SLAs, handoffs).
+	•	Build the infrastructure
+	•	Configure the CRM pipelines (Owners / Originators / Partners / Deals) with required fields, stages, and activity tracking.
+	•	Set up a secure doc intake/upload workflow (even if simple: structured folders + naming standards).
+	•	Formalize relationships
+	•	Draft/complete the Originator Contractor Agreement + Program Rules (conduct, boundaries, non-circumvention, confidentiality).
+	•	Draft/complete the Partner Intro Terms (success fee trigger at close, confidentiality, non-circumvention, dispute handling).
+	•	Package Owner NDA / Mandate packet for consistent use.
+	•	Make it measurable
+	•	Create the weekly metrics snapshot (pipeline counts, stage conversions, next actions, originator activity, partner status).
+
+2) Business / Real Estate (Screening discipline, deal standards, packaging)
+	•	Define what qualifies
+	•	Lock the Owner/Asset eligibility criteria (asset types, size bands, income/occupancy expectations, authority/objective requirements).
+	•	Build the red-flag list + “fast fail” rules aligned to screening stages.
+	•	Standardize what “partner-ready” means
+	•	Define the minimum required data/doc standard before partner introduction.
+	•	Create the Asset Brief template (2–3 pages) and the “Typical Deal Path” expectations one-pager.
+	•	Calibrate quality
+	•	Produce 3 example profiles: Strong / Borderline / Reject (for training and internal consistency).
+	•	Set role boundaries
+	•	Write the Originator-allowed vs ACG-only conversation boundary guide (what originators can gather vs what stays with ACG).
+
+3) Sales Management (Recruiting, coaching, cadence, performance)
+	•	Build the originator channel
+	•	Create a target list + outreach sequence and run a recruiting funnel (25–50 targets).
+	•	Write the Originator Pitch (why join, how they’re supported, how they get paid, expectations).
+	•	Operationalize execution
+	•	Produce the Originator Field Pack: call openers, voicemail, email templates, objection handling, “next step” closes.
+	•	Define the lead handling workflow (assignment rules, SLAs, recycle rules) and enforce it.
+	•	Establish rhythm
+	•	Launch the weekly cadence: pipeline huddle agenda + stalled-deal recovery process + KPI accountability.
+	•	Pilot the system
+	•	Onboard 2–3 pilot originators end-to-end to validate the workflow and refine scripts.
+
+4) Communications (Collateral, messaging control, trust-building)
+	•	Control the message
+	•	Create the Master Messaging & Compliance-Safe Language Guide (approved phrases, phrases to avoid, disclaimers).
+	•	Build the “kits”
+	•	Produce the Owner Education Kit (plain-English explainer, process steps, timeline, FAQs).
+	•	Produce the Originator Program One-Pager (what it is, who it’s for, benefits, expectations).
+	•	Produce the Partner Onboarding/Intro Pack (ACG overview + how ACG screens/packages + intro protocol).
+	•	Standardize outreach
+	•	Draft and store email templates for: owner intro, NDA send, intake follow-up, partner intro, originator recruiting.
+	•	Make it easy to distribute
+	•	Package everything into a clean version-controlled folder structure (one “source of truth” kit set).
+10-Day Feasibility
+10 days is feasible for an “MVP operating system” (ready to run pilot originators + start partner/owner conversations) because a lot of the “heavy” artifacts already exist and mostly need packaging, tightening, and wiring into a workflow(e.g., Screening SOP, fee schedule, partner onboarding pack, owner mandate + NDA, originator comp framework, partner emails). 
+Where 10 days becomes not feasible is if “complete” means production-grade + attorney-reviewed + fully automated + fully validated with market response. Some outcomes are inherently time-uncertain (partner replies, owner responsiveness, originator recruiting conversion).
+What’s realistic to finish in 10 days (MVP definition)
+Green (highly doable):
+	•	Stage-gate SOP (you already have the 5-stage screening backbone; this is mainly tightening pass/fail, outputs, SLAs, handoffs). 
+	•	Eligibility criteria + fast-fail rules + partner-ready minimum data (directly derived from existing SOP and onboarding materials). 
+	•	Asset Brief template + “Typical Deal Path” one-pager (straightforward to draft from your deck + SOP + onboarding pack). 
+	•	Owner education kit / FAQs (you already have an Owner Q&A that can be packaged into a clean kit). 
+	•	Email templates (partner intro + follow-up already drafted; others can be patterned off these). 
+	•	Weekly metrics snapshot (simple dashboard/report once CRM stages are defined).
+Yellow (doable as MVP, but “final” depends on legal/tools):
+	•	Originator Contractor Agreement + Program Rules: you can draft quickly, but “finalize” ideally includes counsel review.
+	•	Partner Intro Terms: same—draftable fast, but legal polish may extend beyond 10 days.
+	•	Master Messaging & Compliance-Safe Language Guide: you can create an internal “approved language + forbidden language + disclaimers” guide quickly, but true compliance sign-off is a legal function (especially if you’re operating across jurisdictions). Your existing “what we do / do not do” language is a strong base. 
+	•	CRM + secure doc intake: feasible if you accept an “80/20” setup (pipelines + required fields + structured folder system). If you also want automation, integrations, and perfect data governance, that’s beyond 10 days.
+Red (not fully controllable in 10 days):
+	•	Recruiting funnel results (25–50 targets can be outreached; conversion to 2–3 onboarded originators depends on response rates).
+	•	Pilot outcomes (you can start pilots and validate workflow, but getting clean cycle-time data + closed-loop learning typically takes longer than 10 days).
+Critical-path dependencies (what must happen first)
+	•	Stage-gate SOP + definitions (what “pass” means, required outputs at each stage). 
+	•	CRM pipelines + required fields (so every activity has a home + reporting works).
+	•	Doc intake + naming standards (so packaging doesn’t collapse into chaos).
+	•	Owner mandate/NDA packet + partner intro terms (so you can safely move deals). 
+	•	Originator boundaries + field pack (so originators don’t create regulatory/messaging risk). 
+Bottom-line feasibility call
+	•	If the goal is “ready to operate + run 2–3 originator pilots + begin selective partner/owner conversations”: Yes, feasible in 10 days, assuming focused execution and using the existing assets you already have. 
+	•	If the goal is “fully institutionalized, legally finalized across jurisdictions, deeply automated, and validated with measurable recruiting/partner conversion”: Not feasible in 10 days—but you can still hit an MVP that’s operationally tight and de-risks the next 30–60 days.
+
+Your Mission, Should You Choose to Accept It
+Business / Real Estate (Screening discipline, deal standards, packaging)
+Role Mission (10-day MVP)
+By Day 10, Biz/RE makes ACG credible and consistent: every opportunity is screened the same way, fast-failed quickly when it should be, and packaged into a partner-ready brief that partners can act on without back-and-forth.
+“Finished MVP” looks like this (vision)
+	•	An originator submits an owner lead → Biz/RE can qualify or fast-fail in 15–30 minutes using a standard checklist.
+	•	A “Pass” means something precise: the deal has the minimum data + docs and a clean story.
+	•	A partner intro happens only when the deal is truly partner-ready: Asset Brief + Data Room + Deal Thesis + Clear asks are complete.
+	•	Originators stay in their lane. Biz/RE protects quality and compliance by controlling what’s asked, promised, and interpreted.
+
+MVP Deliverables (what this person must produce)
+	•	Owner/Asset Eligibility Criteria (a one-page matrix + CRM checklist)
+	•	Red Flags + Fast-Fail Rules (a one-page list aligned to stages)
+	•	Partner-Ready Standard (minimum data/doc checklist + “missing items” rules)
+	•	Asset Brief Template (2–3 pages) + Typical Deal Path One-Pager
+	•	3 Example Profiles (Strong / Borderline / Reject) using the templates
+	•	Conversation Boundary Guide (Originator-allowed vs ACG-only)
+
+A) Define what qualifies
+Lock the Owner/Asset eligibility criteria (asset types, size bands, income/occupancy expectations, authority/objective requirements)
+Build Instructions (MVP)
+Create a 1-page Eligibility Matrix with “Accept / Maybe / Reject” thresholds. Keep it simple enough to train originators, strict enough to protect partner time.
+1) Asset Type Fit (set your MVP lane)
+Define exactly which asset types are in-bounds for MVP. Example structure:
+	•	In-Bounds (MVP focus): (e.g., multifamily, self-storage, industrial, retail centers, etc.)
+	•	Conditional: (e.g., land, hospitality, special-use, development)
+	•	Out-of-Bounds: (anything you are not packaging in MVP)
+MVP rule: fewer asset types = faster screening discipline.
+2) Size Bands (choose ranges partners actually care about)
+Pick two bands:
+	•	Sweet Spot: where you want most deals to land
+	•	Minimum Floor: below which you generally don’t pursue (unless strategic)
+You can express size as:
+	•	Estimated value range (ballpark)
+	•	NOI range
+	•	Units / square footage
+	•	Loan size (if relevant)
+3) Performance Expectations (quick indicators)
+Define minimum expectations for:
+	•	Occupancy / utilization (if stabilized asset)
+	•	Income documentation available (rent roll, T12/operating statement)
+	•	Stability: how many months of consistent performance
+4) Owner Requirements (authority + objective)
+Define screening “must haves”:
+	•	Authority: “Is the person we’re speaking to able to decide or sign?”
+	•	Objective: clear intent (sell / refinance / recap / raise / restructure)
+	•	Timeline: immediate / 30–90 / 90+
+	•	Motivation clarity: why now?
+5) Turn it into a CRM checklist
+Your eligibility matrix must become:
+	•	A checkbox/dropdown set in the Deal record
+	•	A Pass/Fail field with reason codes
+Expected Outcome (Definition of Done)
+✅ One-page Eligibility Matrix that:
+	•	States in-bounds asset types
+	•	Has size bands (sweet spot + minimum floor)
+	•	Defines minimum performance/documentation expectations
+	•	Includes owner authority + objective requirements
+	•	Can be used to decide: Pass / Park / Reject quickly
+“Finished MVP” looks like
+A new lead arrives and within 30 minutes Biz/RE can say:
+	•	“This is in our MVP lane / not in our lane”
+	•	“This is partner-viable / not partner-viable”
+	•	“Here’s what’s missing to proceed”
+
+Build the red-flag list + “fast fail” rules aligned to screening stages
+Build Instructions (MVP)
+Create a Fast-Fail Sheet with two categories:
+Category 1: “Instant Reject” (no further work)
+Examples of what typically belongs here:
+	•	Owner can’t verify ownership or authority
+	•	Refuses NDA but wants sensitive guidance/data
+	•	Material inconsistencies in basic facts (address, ownership, asset type)
+	•	Legal/ethical red flags (fraud indicators, unwillingness to provide basic proof)
+	•	Asset type is out-of-bounds for MVP
+Category 2: “Park Until Fixed”
+Examples:
+	•	Missing basic docs but owner is cooperative
+	•	Timing too far out (e.g., 6–12 months)
+	•	Financials unclear but can be clarified with T12/rent roll
+	•	Cap stack complexity that requires partner consult later
+Align to stages
+Map fast-fails to where they occur:
+	•	Pre-Screen fast-fails: identity, authority, asset in-bounds, basic objective, baseline data
+	•	Screen/Validate fast-fails: inability to validate income/occupancy, title/ownership issues, critical missing docs, contradictory info
+	•	Packaging fast-fails: owner won’t cooperate with packaging, refuses required disclosures, can’t produce core docs
+Expected Outcome (Definition of Done)
+✅ One-page red-flag list with:
+	•	“Instant Reject” rules
+	•	“Park until fixed” rules
+	•	Stage mapping (where each fast-fail triggers)
+	•	Reason codes that match the CRM (so reporting is clean)
+“Finished MVP” looks like
+Team stops wasting cycles:
+	•	Bad deals get rejected politely fast
+	•	“Maybe later” deals get parked with a clear re-entry trigger
+
+B) Standardize what “partner-ready” means
+Define the minimum required data/doc standard before partner introduction
+Build Instructions (MVP)
+Create a Partner-Ready Checklist with three layers:
+Layer 1: Minimum Viable Data (no exceptions)
+	•	Asset address + description
+	•	Asset type + basic specs (units/SF, year built, condition notes)
+	•	Ownership/entity name (or proof path)
+	•	Owner objective + timeline
+	•	High-level financial snapshot (NOI/revenue estimate range is fine if sourced)
+	•	Known issues (vacancy, deferred maintenance, liens—if disclosed)
+Layer 2: Minimum Viable Docs (target list)
+For income-producing assets, MVP docs commonly include:
+	•	Rent roll (or occupancy summary)
+	•	Trailing 12 / operating statement (even if owner-generated initially)
+	•	Tax bill / assessment (baseline)
+	•	Photos / basic condition notes
+	•	Entity/ownership verification (as available)
+If a doc is missing, you need a rule:
+	•	Either “partner-ready cannot proceed without it”
+	•	Or “proceed if X substitute exists” (e.g., bank statements in lieu of T12)
+Layer 3: Deal Story & Ask (required narrative)
+Every partner intro must include:
+	•	What the owner wants (one sentence)
+	•	Why it makes sense (one paragraph)
+	•	What ACG is asking the partner to do (clear action request)
+	•	The “next step” call ask (15–30 min review call, etc.)
+Expected Outcome (Definition of Done)
+✅ A Partner-Ready Checklist that:
+	•	Defines “minimum viable” data + docs
+	•	Defines substitutes and exceptions
+	•	Defines intro-ready narrative requirements
+	•	Becomes a gating checklist inside CRM
+“Finished MVP” looks like
+Partners get intros that feel professional:
+	•	Fewer follow-ups
+	•	Faster “yes/no”
+	•	More trust in ACG packaging discipline
+
+Create the Asset Brief template (2–3 pages) and the “Typical Deal Path” expectations one-pager
+Asset Brief Template (2–3 pages) — Build Instructions (MVP)
+Design for speed and clarity. Target: 10–20 minutes to assemble once data exists.
+Page 1: Executive Snapshot
+	•	Deal ID + asset name/location
+	•	Owner objective + timeline
+	•	Asset overview (type, size, highlights)
+	•	Financial headline numbers (revenue/NOI/occupancy; clearly labeled as “owner-provided” if so)
+	•	ACG view: “why this is worth a look” (3 bullets)
+	•	The ask: “What we want the partner to do next” (1–2 bullets)
+Page 2: Asset & Performance Detail
+	•	Unit/SF mix or tenant overview (as applicable)
+	•	Occupancy trend (simple)
+	•	Expenses snapshot (high-level)
+	•	Capex/deferred maintenance notes
+	•	Market context (2–4 bullets, no deep research needed in MVP)
+Page 3 (optional): Risks + Process + Attachments
+	•	Key risks / unknowns (bullet list)
+	•	Open questions (what partner should evaluate)
+	•	Data room contents list (what’s included)
+	•	Contact protocol (who communicates with owner and how)
+Typical Deal Path One-Pager — Build Instructions (MVP)
+This is for owner alignment and partner clarity. Include:
+	•	The stages (intake → pre-screen → validate → package → partner intro → partner process → close)
+	•	Typical timeline ranges (best case / normal)
+	•	What the owner must provide (docs + responsiveness expectations)
+	•	What ACG does vs what the partner does
+	•	Important disclaimers (plain-English)
+Expected Outcome (Definition of Done)
+✅ Two polished templates exist:
+	•	Asset Brief (2–3 pages) in Doc/PDF format
+	•	Typical Deal Path one-pager …and both are stored as the single source of truth for packaging.
+“Finished MVP” looks like
+Any team member can pick up the templates and produce consistent outputs that “look like ACG.”
+
+C) Calibrate quality
+Produce 3 example profiles: Strong / Borderline / Reject
+Build Instructions (MVP)
+Using the new templates, create 3 sample deal profiles (fictionalized is fine, or sanitized real patterns):
+1) Strong Example
+	•	Clean authority + clear objective
+	•	Docs mostly available
+	•	Metrics fall in the sweet spot
+	•	Easy partner-ready story
+2) Borderline Example
+	•	Some missing docs, but cooperative owner
+	•	Slightly outside sweet spot (size, occupancy, condition)
+	•	Shows how to “Park until fixed” OR how to proceed with conditions
+3) Reject Example
+	•	Triggers fast-fail rules
+	•	Demonstrates the polite rejection language + CRM coding
+Each example must include:
+	•	Eligibility matrix result
+	•	Fast-fail / pass rationale
+	•	Partner-ready checklist status
+	•	Asset Brief (even if shorter)
+Expected Outcome (Definition of Done)
+✅ Three examples exist that:
+	•	Teach the standards
+	•	Make gray areas obvious
+	•	Can be used to onboard originators + internal team
+“Finished MVP” looks like
+When someone argues “this seems fine,” you can point to examples and say:
+	•	“This is Borderline; it needs X”
+	•	“This is Reject because it triggers rule Y”
+
+D) Set role boundaries
+Write the Originator-allowed vs ACG-only conversation boundary guide
+Build Instructions (MVP)
+Create a 1–2 page boundary guide with two columns:
+Originator Allowed (what they can gather)
+	•	Basic owner info + best contact method
+	•	Basic asset description (type, address, size/unit count)
+	•	Owner objective + timeline (high-level)
+	•	Whether docs exist (yes/no) and willingness to share under NDA
+	•	Permission to send NDA + intro packet
+	•	Scheduling a call with ACG
+ACG-only (what originators must NOT do)
+	•	Discuss pricing/fees in detail beyond approved language
+	•	Make promises about outcomes, partners, timelines, or approvals
+	•	Interpret financials, underwriting, valuation, token terms, securities-like language
+	•	Negotiate terms
+	•	Request sensitive documents without the approved intake process
+	•	Communicate “partner names” prematurely or attempt direct partner coordination
+Add “safe language” snippets
+Include a few approved phrases originators can use:
+	•	“ACG will review and confirm fit after NDA and basic intake.”
+	•	“We don’t make commitments until the core team validates the package.”
+	•	“We’ll introduce you to the right regulated partner if it qualifies.”
+Expected Outcome (Definition of Done)
+✅ Boundary guide exists and is enforced:
+	•	Included in Originator Field Pack
+	•	Signed acknowledgment (checkbox in CRM or as part of Program Rules)
+“Finished MVP” looks like
+Originators act as disciplined scouts, not closers:
+	•	They gather just enough to qualify
+	•	They protect the brand and keep ACG in control of partner-facing accuracy
+
+Day 10 Acceptance Test for Role 2 (Biz/RE)
+If all are “yes,” this role’s MVP is complete:
+	•	Can we decide Pass/Park/Reject in <30 minutes using a standard matrix?
+	•	Do we have written fast-fail rules and stage alignment?
+	•	Do we have a partner-ready checklist that gates intros?
+	•	Can we produce a clean 2–3 page Asset Brief within 1 hour once docs exist?
+	•	Do we have Strong/Borderline/Reject examples for training?
+	•	Do originators have a clear boundary guide with safe language?
+

@@ -1,0 +1,448 @@
+ 
+Aurelius Capital Group (ACG)
+Automation Stack (Vision)
+Architecture & Operating Blueprint
+Layers 1–3: Intelligence, Workflow, Relationship & Execution
+Document Date: January 29, 2026
+
+Table of Contents (outline)
+•	1. Executive Summary
+•	2. System Overview
+•	3. Common Data Objects & Concepts
+•	4. Layer 1: Data & Intelligence (The Moat)
+•	   4.1 Property Discovery Engine
+•	   4.2 Ownership & Entity Resolution
+•	   4.3 Market NOI Estimation (Screening Only)
+•	   4.4 Capital Motivation Signals
+•	   4.5 Deal Fitness Scoring Engine
+•	5. Layer 2: Workflow & Discipline
+•	   5.1 Intake Gatekeeper
+•	   5.2 Asset Brief Generator
+•	   5.3 Partner Matching & Routing
+•	6. Layer 3: Relationship & Execution Support
+•	   6.1 Lightweight CRM
+•	   6.2 Execution Stage Tracking
+•	   6.3 Attribution & Compensation Logic
+•	7. Implementation Roadmap (phased)
+•	8. Appendices (schemas, enums, reason codes)
+ 
+1. Executive Summary
+This document consolidates the full ACG Automation Stack (Vision) into a single, implementation-ready blueprint. It organizes the system into three layers that work together to create a defensible, repeatable deal-sourcing and execution machine:
+•	Layer 1: Data & Intelligence (The Moat) — produces high-signal opportunities, owner truth, and screening-grade economics/motivation signals.
+•	Layer 2: Workflow & Discipline — enforces a single intake front door, standardized briefs, and consistent routing to the right partner.
+•	Layer 3: Relationship & Execution Support — keeps conversations and deals moving with a lightweight CRM, stage tracking, and auditable attribution/comp.
+Across all layers, ACG’s advantage is created by (1) deduped property and owner intelligence, (2) ruthless screening and routing discipline, and (3) a partner ecosystem that can execute quickly without internal friction.
+Core operating principles
+•	One front door for every opportunity (no side channels).
+•	One canonical record per property and per owner cluster (dedupe is mandatory).
+•	Screening produces ranges + confidence, not fake precision.
+•	Every deal must have an accountable owner and a next step with a due date.
+•	Attribution is event-based with evidence; compensation is rules-based and auditable.
+2. System Overview
+High-level relationship flow
+ACG trains and supports originators and partner channels, produces data-screened opportunities, and then executes via disciplined workflow:
+Data Intelligence → Intake & Briefing → Partner Routing → Relationship Management → Execution Stages → Close & Attribution.
+Layer interaction summary
+•	Layer 1 continuously produces Property Candidates with owner clusters, motivation, NOI bands, and a deal fitness score.
+•	Layer 2 converts candidates (plus partner/broker/inbound deals) into canonical Deal Records via the Intake Gatekeeper and publishes an Asset Brief.
+•	Layer 2 routes each deal to the best-fit partner/team and creates a task pack to force first-touch discipline.
+•	Layer 3 manages relationships and tasks, tracks execution stages, and computes attribution/comp from timestamped events and milestones.
+Outputs by layer (what each layer hands forward)
+Layer	Primary Outputs	Consumes / Feeds
+Layer 1	Property Candidates, Owner Clusters, NOI Bands, Motivation Signals, Fitness Score, Evidence Links	Feeds Layer 2 intake and briefing
+Layer 2	Canonical Deal Record, Screening Decision, Asset Brief, Partner Assignment, Task Pack	Feeds Layer 3 CRM and stage tracking
+Layer 3	Interaction Timeline, Task SLAs, Stage Events, Attribution Ledger, Comp Milestones	Feeds back learning signals to Layer 1/2
+3. Common Data Objects & Concepts
+To keep the system consistent, all layers share a small set of canonical objects. These objects are stored as structured records (not just PDFs) so they can be searched, deduped, scored, and audited.
+Canonical objects
+Object	Definition / Role
+Property Candidate	A deduped, enriched property record produced by Layer 1 discovery (screening-grade).
+Parcel	Assessor/registry parcel unit (APN/Parcel ID) linked to a property candidate.
+Owner Cluster	A resolved grouping of legal entities/aliases that represent a real-world owner portfolio.
+Deal Record	The canonical transaction opportunity record created by Layer 2 intake (one per asset/deal).
+Asset Brief	A standardized decision-ready packet rendered from structured fields + evidence; versioned.
+Evidence Link / Artifact	Source references (assessor pages, deed records, listings, emails, OM PDFs).
+Score + Confidence	Every scoring output includes a confidence metric and a “why” driver list.
+Reason Codes	Enumerated explanations used for reject/watch/research decisions and for overrides.
+Task + SLA	A next step with due date and escalation rules; required for active stages.
+Stage Event	Timestamped stage transitions and key milestones (LOI, PSA, Close).
+Attribution Event	Timestamped contribution events with evidence used for credit and compensation.
+ 
+4. Layer 1: Data & Intelligence (The Moat)
+Layer 1 is the high-signal engine that continuously generates opportunities and reduces uncertainty before humans ever spend time. It is where ACG builds compounding advantage through dedupe, entity truth, calibrated screening estimates, and motivation timing.
+4.1 Property Discovery Engine
+Purpose
+Continuously identify income-producing commercial properties likely to meet ACG’s mandate and executability thresholds, then convert them into deduped Property Candidates with evidence and initial ranking.
+What it optimizes for
+•	Fit: property types, size bands, markets/submarkets aligned to ACG focus.
+•	Verifiability: enough public record completeness to validate owner and key facts.
+•	Motivation: early signals that indicate openness to a transaction or recap conversation.
+•	Freshness: new-to-ACG opportunities, not recycled lists.
+End-to-end loop (daily/weekly)
+Step	Description
+Ingest	Collect raw observations from public records, listing signals, referrals, and partner requests.
+Normalize	Standardize addresses, geocode, unify property-type taxonomy, normalize numeric fields.
+Resolve	Deduplicate properties across sources; attach parcels; create preliminary ownership cluster link.
+Enrich	Add screening-grade context: market tags, physical proxies, owner profile cues, transaction history.
+Filter	Apply hard gates to reject obvious non-fits early.
+Rank	Compute priority based on Fit, Verifiability, and Motivation components.
+Queue	Create actionable work units: outreach queue, research queue, watchlist, discard log.
+Key outputs
+•	Property Candidate record (deduped identity + basic attributes + evidence).
+•	Preliminary owner string + early owner cluster hint (if possible).
+•	Discovery Priority Score + driver explanations.
+•	Queues: Contact, Research, Watchlist, Discard.
+MVP vs Full Vision
+•	MVP: 2–4 reliable sources, normalize + dedupe, basic enrichment (owner string, last sale, debt recordings), simple ranking and queues.
+•	Full: multi-state change detection, robust entity resolution integration, owner behavior timelines, trigger-based alerts, outcome-labeled learning.
+4.2 Ownership & Entity Resolution
+This module converts messy owner name strings into a trustworthy, contactable owner truth graph: who owns what, how entities relate, how to reach decision makers, and how portfolios cluster. It is a primary source of moat because competitors typically stop at name strings.
+Core questions answered
+•	Who legally owns the property today (current title owner of record)?
+•	What entity is that owner (normalized legal entity + jurisdiction)?
+•	How can we contact them responsibly (mailing address + likely signatory path)?
+•	What else do they own (portfolio clustering across markets)?
+•	How confident are we (confidence + evidence links)?
+•	What is the complexity (trusts, layered LLCs, co-owners, recent transfers)?
+Entity graph model
+Key nodes
+•	Property
+•	Parcel
+•	Deed/Title Event
+•	Legal Entity
+•	Person
+•	Address
+•	Loan/Lien
+•	Registered Agent
+Key relationships (edges)
+•	Parcel OWNED_BY Entity/Person (time-bounded)
+•	Entity HAS_AGENT Registered Agent; Entity REGISTERED_IN Jurisdiction
+•	Entity MANAGED_BY / OFFICER_OF Person (when public)
+•	Entity MAILING_ADDRESS Address; Entity RELATED_TO Entity (manager/address/agent ties)
+Resolution pipeline (conservative merge policy)
+•	Ingest ownership observations (assessor owner name, deed grantor/grantee, lien docs, registry lookups).
+•	Normalize entity names (suffix canonicalization, punctuation removal, “c/o” parsing, trust flags).
+•	Candidate blocking (name similarity, jurisdiction, shared addresses, shared agents, shared managers).
+•	Match + merge with confidence scoring (prefer false negatives over false positives).
+•	Title chain replay to select current owner; handle partial interests and parcel groups.
+•	Owner cluster formation (portfolio rollup) + relationship links among related entities.
+Outputs
+•	Ownership Card (property-level): current owner, mailing, agent/manager (if public), confidence, complexity flags, evidence links.
+•	Owner Cluster Card (portfolio-level): canonical cluster name + aliases, entities, footprint, primary contact route, do-not-duplicate key.
+•	Match metadata: confidence and needs-review triggers when ambiguous or conflicting.
+Edge cases handled
+•	Trusts and estates; layered LLCs; syndications; co-ownership and fractional interests; internal transfers; registered-agent noise; name collisions.
+MVP vs Full Vision
+•	MVP: normalize names, conservative dedupe, property→parcel→owner string + mailing, basic clustering (exact name+address).
+•	Full: registry-anchored entity IDs, robust graph relationships (agent/manager/address history), temporal behavior, trigger alerts, learning from verified outcomes.
+4.3 Market NOI Estimation (Screening Only)
+Market NOI Estimation provides a first-pass earnings lens before rent rolls and T-12s. It outputs an NOI range (low/base/high), assumptions, and confidence. It is explicitly not underwriting and must never be used as investor-facing return claims.
+Inputs (ordered by trust)
+•	Physical facts: asset type, size/units, year built, geography/submarket.
+•	Market benchmarks: rent bands, vacancy priors, sector health proxies.
+•	Observed signals: listing rents/OM snippets (weak), tax trends, permits, recent sale/list price (sanity checks).
+•	Operating structure priors: NNN vs gross, expense ratio priors, key line items (taxes, insurance).
+Method: Prior → Adjust → Band
+•	Start with market priors for revenue and expenses by asset type and submarket.
+•	Apply observed-signal adjustments (with conservative weights).
+•	Generate low/base/high NOI bands via sensitivity of rent, vacancy, and expenses.
+•	Compute a separate confidence score based on data completeness and asset-type uncertainty.
+Asset-type guidance (screening-level)
+•	Multifamily: strongest screening reliability; estimate PGI from units×market rent; apply vacancy prior and other-income % prior.
+•	Industrial: moderate; rent from RSF×market $/SF; infer NNN vs gross; widen band for single-tenant risk.
+•	Office: highest uncertainty; wider vacancy and concession/TI sensitivity; emphasize confidence + flags over point estimates.
+Expense modeling (avoid blunt ratios)
+•	MVP: OpEx = EGI × expense_ratio_prior (wide band).
+•	Better: Hybrid stack = Taxes + Insurance + Baseline fixed + (EGI × variable %).
+•	Always label assumptions and keep a verification checklist for taxes, insurance, payroll, R&M, utilities.
+Guardrails
+•	Always output a range (no single NOI).
+•	Always log assumptions and provenance (market priors vs broker claims).
+•	Never let broker pro forma override priors; treat as one observation.
+•	Calibrate using realized T-12/rent roll outcomes over time.
+MVP vs Full Vision
+•	MVP: rent/vacancy/expense priors by type/submarket; NOI band + confidence + assumptions.
+•	Full: hybrid OpEx stack, unit-mix inference, NNN/gross inference, concession shadow factor for office, continuous calibration loops.
+4.4 Capital Motivation Signals
+Capital Motivation Signals estimate how likely an owner is to engage soon, and why. This module converts public and market breadcrumbs into a motivation score, type, time window, and recommended outreach angle.
+Outputs per property and per owner cluster
+•	Motivation score (0–100) + confidence score.
+•	Motivation type: refinance-driven, liquidity/exit, reposition/capex, portfolio rationalization, administrative/complexity, market-driven, unknown.
+•	Top signal stack with timestamps; time window estimate (0–90d, 3–12m, 12–24m).
+•	Approach recommendation (soft intro, recap angle, JV equity angle, certainty-of-close angle).
+Signal families (taxonomy)
+Family	Examples / Notes
+Debt & refi timing	Maturity proximity proxies, modifications, refinance patterns.
+Ownership lifecycle	Long hold periods, portfolio thinning, internal transfers, equity buildup.
+Ops & capital needs	Permits/major repairs, lease-up indicators, code/violation cues where public (caution).
+Listing behavior	New listing, relist, price reductions, withdrawn/back-on-market cycles.
+Administrative/financial stress	Tax delinquency patterns, municipal liens where public (noisy; capped).
+Complexity/behavior	Absentee ownership, multi-entity sprawl, co-owner decision friction.
+Scoring approach
+•	Weighted signal stack with time-decay (recent signals matter more).
+•	Separate confidence score (robustness of inference, not score magnitude).
+•	Conflict handling: cap scores and push to watchlist when signals are one-dimensional or contradictory.
+•	Owner-cluster motivation aggregates property signals and detects disposition patterns.
+Trigger engine
+•	Watchlists promote deals when new triggers occur: new lien/modification, new deed, new listing/price change, delinquency event, major permit issuance.
+•	Triggers re-score motivation and automatically create intake/research tasks.
+Guardrails (brand and compliance)
+•	Prefer commercial/public-record and market signals; avoid sensitive personal inference.
+•	Outreach language should be options/solutions, not “we see you’re in trouble.”
+•	Use confidence and reason codes to prevent over-reliance on noisy signals.
+MVP vs Full Vision
+•	MVP: maturity/hold/listing/tax patterns + basic owner clustering; motivation score + type + drivers.
+•	Full: robust entity graph integration, trigger watchlists, behavioral fingerprinting, outcome learning for engagement prediction.
+4.5 Deal Fitness Scoring Engine (Core IP)
+The Deal Fitness Scoring Engine is the triage brain that ranks opportunities by being both good and doable. It combines fit, market context, screening economics, owner executability, and motivation/timing into a single score, tier, and next-best action.
+Key outputs
+•	Deal Fitness Score (0–100) + tier (A/B/C/Watch/Reject).
+•	Subscore breakdown with weights and driver explanations.
+•	Confidence score and gating status (Pass/Fail + gate).
+•	Recommended next action: Route to Intake, Research, Watchlist, or Do Not Pursue.
+Architecture: gates → subscores → composite
+•	Hard gates reject obvious non-fits early (mandate, geography, minimum scale, irreconcilable ownership ambiguity).
+•	Compute subscores: Asset Fit, Market Fit, Economics Plausibility, Owner Executability, Motivation & Timing.
+•	Combine via weights; apply a process-risk penalty multiplier when contradictions or complexity are high.
+Example subscore definitions
+Component	Measures
+Asset Fit	Property type, size band, multi-tenant vs single-tenant policy, physical plausibility cues.
+Market Fit	Market tier, sector health proxy, liquidity/velocity proxies, submarket preference alignment.
+Economics Plausibility	NOI band plausibility, margin priors, implied value sanity checks, sensitivity wideners.
+Owner Executability	Ownership resolution confidence, contact path clarity, decision friction/complexity flags.
+Motivation & Timing	Motivation score/type, time window, trigger recency, alignment with outreach cadence.
+Process Risk (penalty)	Contradictory data, unclear title, broker noise, binary tenant risk, unusually high capex uncertainty.
+Weights (tunable policy lever)
+A typical weighting that favors doable + motivated over theoretical perfection:
+•	Asset Fit 20%
+•	Market Fit 15%
+•	Economics Plausibility 20%
+•	Owner Executability 25%
+•	Motivation & Timing 20%
+•	Process Risk applied as a multiplier penalty (e.g., ×0.85 for high risk)
+Feedback loop (how it compounds)
+•	Store outcomes (pass/reject at Stage 3, LOI, close) and map back to the drivers that predicted success.
+•	Update priors and weights by market and asset type to improve ranking accuracy over time.
+ 
+5. Layer 2: Workflow & Discipline
+Layer 2 is the operational discipline layer. It ensures every opportunity enters through a single front door, is deduped and screened consistently, is summarized into a standardized asset brief, and is routed to the right partner/team with tasks.
+5.1 Intake Gatekeeper
+Mission: one front door, one deal record, fast disposition.
+Front-door inputs
+•	System-discovered deal (Layer 1)
+•	Partner/originator submission
+•	Broker/marketed deal (OM upload)
+•	Inbound owner inquiry
+Minimum viable deal packet (MV-DP)
+Readiness Level	Required Items
+Level 0 (create)	Address or parcel ID; rough type; source channel; submitter; timestamp/notes
+Level 1 (screen)	Units/SF; market tag; owner name string + mailing (if available); deal posture; price guidance (optional)
+Level 2 (advance)	Clear contact path; screening decision with reason codes; routing assignment; conflict check complete
+Gatekeeper stages
+•	Stage 0 Capture: create record fast; attach raw artifacts; run dedupe checks.
+•	Stage 1 Dedupe/Conflict: merge into existing record or block for do-not-contact/conflict.
+•	Stage 2 Completeness: auto-score missing fields; route to research or screening.
+•	Stage 3 Intake Screening: pass/watch/reject/research with reason codes.
+•	Stage 4 Routing: assign accountable owner + first-touch SLA.
+Reason codes (examples)
+•	Reject: out of geo, wrong type, below scale, economics implausible, ownership too unclear, conflict/do-not-contact.
+•	Watch: timing unclear, missing key data, market softness, stale listing monitor.
+•	Research: verify units/SF, confirm current owner, parcel mapping, debt recordings, rent proxy.
+Automations (high ROI)
+•	Auto-dedupe suggestions with merge preserving multi-source attribution.
+•	Auto-fill from Layer 1 (owner cluster, NOI bands, motivation, fitness drivers).
+•	Completeness checklist + task generator.
+•	SLA timers and escalations for unworked deals.
+•	Do-not-contact enforcement with admin override logging.
+MVP vs Full
+•	MVP: intake form + attachments, dedupe, completeness score, decision + reason codes, routing, audit trail.
+•	Full: OM parsing, contradiction detection, trigger-based watchlists, richer conflict resolution, analytics on pass rates and cycle time.
+5.2 Asset Brief Generator
+The Asset Brief Generator converts a passed intake deal into a standardized, decision-ready brief. It publishes a consistent packet for partners, reduces rework, and preserves evidence/assumptions with versioning.
+Canonical brief sections (one-pager core)
+•	Header (identity: address, type, size, market, source, posture, version)
+•	Snapshot (fitness tier, thesis, top drivers and risks)
+•	Asset summary (physical facts, occupancy/tenant proxies, capex cues)
+•	Market context (screening-grade positioning and rent bands)
+•	Ownership & contactability (owner cluster, mailing, agent/manager if public, routing advice)
+•	Screening economics (NOI low/base/high + assumptions + confidence)
+•	Motivation & timing (score/type, triggers, outreach angle)
+•	Execution plan (first 3 actions, artifacts to request, assigned owner, due dates)
+•	Verification checklist (what must be proven before real underwriting)
+•	Evidence & attachments (links and uploaded artifacts)
+Generator workflow
+•	Pull canonical deal record + Layer 1 intelligence + intake notes.
+•	Normalize into structured brief schema; label broker-provided fields as unverified.
+•	Auto-generate narrative blocks (deal thesis, why-now, next steps).
+•	Version and re-render when new evidence arrives; log what changed.
+Automations
+•	OM/email field extraction (tagged as unverified).
+•	Contradiction detection (assessor vs OM size, owner, etc.) with confidence reduction.
+•	Auto task creation from verification checklist and stage triggers.
+•	Partner-ready view packaging (decision view, research view, outreach view).
+MVP vs Full
+•	MVP: auto-generate v1 brief with snapshot + owner + NOI band + motivation + next steps; versioning; structured storage.
+•	Full: advanced extraction, owner-cluster narrative, trigger-based refresh, brief-to-outreach personalization.
+5.3 Partner Matching & Routing
+This module assigns each deal to the best-fit partner/team using hard constraints, relationship priority, fit scoring, and capacity balancing. It creates task packs and SLAs to force first-touch discipline and avoids duplicate outreach via owner-cluster locks.
+Inputs
+•	Deal attributes (type, size, market, posture, complexity, motivation type, fitness tier, confidence).
+•	Source and relationship context (who sourced, any warm relationship, exclusivity constraints).
+•	Partner profiles (coverage, strengths, capacity, SLAs, conflicts, relationship graph).
+•	Economics/attribution policy (split rules, pools, eligibility).
+Partner profile (matching card)
+•	Coverage: markets/submarkets, asset types, size bands, posture capability (off-market vs brokered).
+•	Strengths: owner direct, broker strength, complex ownership, value-add, institutional recap.
+•	Capacity & SLA: active load, max load, first-touch speed, overdue rate.
+•	Relationship graph: known owner clusters/brokers; past deals; do-not-route lists.
+Routing logic (hybrid)
+•	Step 1: Hard constraints (coverage/type/capacity/conflicts).
+•	Step 2: Relationship priority (submitted lead or verified warm relationship).
+•	Step 3: Fit scoring among eligible partners (coverage fit, expertise, posture fit, complexity fit, speed/discipline, capacity health).
+•	Fairness: weighted round-robin within tiers; anti-hoarding rules; reassignment if SLAs missed.
+Outputs
+•	Assigned accountable owner + supporting pod roles (optional).
+•	Auto-generated task pack (first touch, verification tasks, outreach assets).
+•	Notification explaining why the partner received the deal (fit reason codes).
+•	Owner-cluster lock updates and conflict resolution workflow when needed.
+MVP vs Full
+•	MVP: partner profiles + constraints + simple fit scoring + SLA timers + reassignment + owner-cluster lock.
+•	Full: relationship graph, performance learning by deal type, pod routing, automated conflict resolution with split adjustments.
+ 
+6. Layer 3: Relationship & Execution Support
+Layer 3 turns routed deals into closed outcomes through disciplined relationship management, stage tracking, and auditable attribution. It is designed to stay lightweight while still enforcing next steps, SLAs, and conflict-free owner outreach.
+6.1 Lightweight CRM
+ACG’s CRM is owner-cluster centric. It maintains one record of truth for every owner cluster, contact, deal, and interaction timeline, while preventing duplicate outreach and keeping follow-up disciplined.
+Must-do capabilities
+•	Owner-cluster relationship management (portfolio-aware).
+•	Touch tracking with required outcome tags and required next step + due date.
+•	Deal pipeline visibility and next-action discipline.
+•	Attribution integrity (source, relationship ownership, event audit trail).
+•	Duplicate outreach prevention (cluster locks, conflict banners).
+Core objects (lean set)
+•	Owner Cluster, Legal Entity, Broker/Intermediary, Contact, Deal, Interaction/Touch, Task, Cadence, Attribution Event, Lock/Conflict.
+Key views
+•	Today cockpit (overdue/due tasks, hot deals, inbound replies, stale conversations).
+•	Owner cluster view (timeline, open tasks, active deals, suggested angle, lock status).
+•	Deal view (stage, brief snapshot, verification checklist, attachments, team roles).
+•	Partner dashboard (my pipeline, SLA compliance, conversion metrics).
+Discipline features
+•	Relationship locking per owner cluster with override audit trail.
+•	Cadence templates that generate tasks (owner cold outreach, owner warm, broker follow-up).
+•	Evidence-first notes and structured tags (blockers, preferences, decision maker).
+MVP vs Full
+•	MVP: owner clusters + locks, deals, touches with required next step, tasks/cadences, basic dashboards.
+•	Full: relationship graph, trigger alerts from Layer 1 watchlists, deeper analytics, multi-role pods and handoffs.
+6.2 Execution Stage Tracking
+Execution Stage Tracking is the deal state machine that prevents limbo. It defines allowed stages, stage gates, SLAs, blockers, and audit trails from first touch through close.
+Stage list (typical ACG flow)
+Stage	Definition
+0 Captured	Deal created, deduped, assigned owner, first-touch task generated.
+1 First Touch Attempting	Attempts logged with outcome tags and next step.
+2 Contact Established	Decision maker confirmed; posture captured; data request issued.
+3 Data Received	T-12/rent roll/lease basics received; screening-plus validation; update fitness.
+4 Underwriting & Structuring	IC-ready structure; risk register; proposed terms and execution plan.
+5 Offer / LOI Submitted	LOI/term sheet sent; follow-up cadence active; responses tracked.
+6 LOI Executed	Signed LOI; diligence checklist generated; PSA drafting starts.
+7 Diligence & PSA	Title/survey/inspections; PSA redlines; open items tracked.
+8 Financing & Closing Prep	Capital stack finalized; closing checklist; closing date set.
+9 Closed / Funded	Close confirmed; economics snapshot stored; attribution locked; post-mortem.
+Watchlist (side state)	Waiting on timing/response/trigger; must have reason + next review date.
+Disqualified (side state)	Terminal no; must have reason code; decide relationship status.
+Stage gates (advance only with minimum evidence)
+•	Every stage requires: accountable owner, next step + due date, and a minimum set of artifacts/fields.
+•	No advancement without gate satisfaction unless an admin override is logged with reason code.
+SLAs and staleness rules
+•	Time-to-first-touch by tier (e.g., Tier A 24h, Tier B 48–72h, Tier C 5 business days).
+•	Max time-in-stage thresholds; auto-escalate when no touches are logged in an active stage window.
+•	Blockers tracked explicitly (waiting on owner/broker/docs/legal/financing/internal).
+Automation hooks
+•	Stage changes generate task packs (data request pack, underwriting checklist, diligence checklist, closing checklist).
+•	Stage 3 triggers re-scoring using real financials and flags variances vs screening bands.
+•	Stage 9 triggers attribution lock and post-mortem data capture.
+6.3 Attribution & Compensation Logic
+Attribution & Compensation is the truth system that determines who earned credit and how payouts are split, using timestamped events, evidence, and rules-based plans tailored to deal posture (off-market vs brokered vs recap).
+Non-negotiable principles
+•	Event-based attribution with evidence (not opinion-based).
+•	Anchor credit to the canonical Deal ID and Owner Cluster ID.
+•	Compute payouts from a versioned Deal Economics Snapshot (fee pool basis).
+•	Require audit trails for overrides and disputes.
+Three layers of credit
+•	Source credit (who introduced the opportunity).
+•	Relationship credit (who established verified access to the decision maker).
+•	Execution credit (who progressed LOI/PSA/close milestones).
+Attribution events (examples)
+•	Submitted lead accepted (post-dedupe)
+•	Verified owner identity/contact path
+•	First live conversation with decision maker
+•	Data pack received (T-12 + rent roll)
+•	LOI delivered / LOI executed
+•	PSA executed
+•	Closed/funded
+•	Capital term sheet secured (if separate pool)
+Split computation models
+•	Recommended: Role floors + points bonus (prevents gaming).
+•	Alternative: Pure points distribution (simpler, easier to game).
+•	Separate fee pools when needed (deal fee vs capital introduction fee) to avoid incentive mixing.
+Default plan examples (tunable)
+Plan Type	Notes
+Off-market owner-direct	Balances originator + relationship + closer + structurer; rewards access and execution.
+Brokered/marketed	Emphasizes execution/structuring; smaller originator share.
+JV/recap	Heavier weight on relationship and structuring; separate capital fee pool if applicable.
+Vesting and payout milestones
+•	Option: close-only payout (simplest).
+•	Or milestone vesting: LOI executed (20–30%), PSA executed (20–30%), Close (40–60%).
+•	Define clawbacks for policy violations or fraudulent event logging; handle re-trades with versioned economics snapshots.
+Anti-gaming and disputes
+•	High-value events require evidence links; duplicate events suppressed.
+•	Role eligibility limits who can earn certain credits.
+•	Owner-cluster lock violations trigger penalties and/or dispute workflow.
+•	Dispute cases freeze or escrow disputed payouts until admin decision is logged.
+ 
+7. Implementation Roadmap (Phased)
+A practical build sequence prioritizes disciplined workflow first, then deep intelligence and advanced automations. Below is an implementation order that reduces risk and produces usable capability early.
+Phase 1: Discipline MVP
+•	Layer 2 Intake Gatekeeper (dedupe, screening decisions, reason codes, routing).
+•	Layer 2 Asset Brief Generator (v1 template, structured storage, versioning).
+•	Layer 3 Lightweight CRM core (owner clusters, locks, touches, tasks, simple cadences).
+Phase 2: Intelligence Foundations
+•	Layer 1 Property Discovery MVP (ingest, normalize, dedupe, rank queues).
+•	Layer 1 Ownership & Entity Resolution MVP (owner normalization, title chain, basic clustering).
+•	Layer 1 NOI bands + motivation scoring MVP integrated into briefs.
+Phase 3: Conversion Levers
+•	Partner Matching & Routing scoring + SLA reassignment automation.
+•	Execution stage tracking state machine + task packs.
+•	Attribution events ledger + close-only payout logic.
+Phase 4: Moat Compounding
+•	Trigger-based watchlists with re-scoring.
+•	Outcome-labeled learning to tune weights/priors.
+•	Milestone vesting, multi-pool compensation, automated dispute tooling.
+8. Appendices
+Appendix A — Suggested Reason Code Sets (starter)
+Bucket	Reason Code	Description
+Reject	OUT_OF_GEO	Outside approved markets or service footprint.
+Reject	WRONG_ASSET_TYPE	Asset type not within mandate.
+Reject	BELOW_MIN_SCALE	Too small to justify process costs.
+Reject	OWNERSHIP_UNCLEAR	Cannot establish a responsible contact path.
+Reject	ECON_IMPLAUSIBLE	Screening economics fail plausibility gates.
+Watch	TIMING_UNCLEAR	Fit is plausible but timing not confirmed; monitor triggers.
+Watch	STALE_LISTING	Monitor for price changes, relist, or new signals.
+Research	VERIFY_SIZE	Units/SF conflicts or missing.
+Research	VERIFY_OWNER	Need latest deed/registry confirmation.
+Research	DEBT_EVENTS	Need lien recordings/maturity proxy.
+Appendix B — Stage Transition Rules (high-level)
+Stages are governed as a state machine. A deal cannot advance without meeting the minimum gate requirements: accountable owner, required artifacts/fields, and next step due date. Admin overrides are logged with reason codes.
+Appendix C — Partner Profile Field Checklist
+•	Identity: partner name, entity, contact info, role type (originator/closer/etc.).
+•	Coverage: markets, submarkets, asset types, size bands, posture capability.
+•	Strength tags: owner direct, brokered, complex ownership, value-add, recap, etc.
+•	Capacity: active deals, max deals, SLA stats, overdue rate.
+•	Conflicts and do-not-route lists; exclusivity notes.
+•	Relationship graph links (known owner clusters and brokers) and evidence.
+Appendix D — Asset Brief Required Fields (minimum)
+•	Identity: address, type, size, market/submarket; source + posture; version.
+•	Ownership: current title owner (resolved if possible), contact path, confidence + evidence links.
+•	Economics: NOI low/base/high + assumptions + confidence.
+•	Motivation: score/type + top signals + time window.
+•	Execution: next steps, assigned owner, verification checklist, attachments/evidence.
+End of document.
